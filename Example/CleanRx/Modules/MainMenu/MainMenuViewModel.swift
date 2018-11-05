@@ -67,10 +67,10 @@ class MainMenuViewModel: RxArchViewModel {
             self.actionEventChannel.accept(NavigationAction(payload: MainMenuView.Action.secondScreen))
         case .navCancel:
             self.actionEventChannel.accept(
-                PopupAction(title: "Teste",
-                            message: "teste",
+                PopupAction(title: "Test",
+                            message: "test",
                             actions: [
-                                UIAlertAction(title: "bla",
+                                UIAlertAction(title: "OK",
                                               style: .default,
                                               handler: nil)
                             ],

@@ -31,14 +31,14 @@ class MainMenuReducer: RxArchReducer {
     }
     
     private func handleButtonClicked(_ event: ButtonClickedEvent<MainMenuView.Button>, currentState: MainMenuState) -> MainMenuState {
-        let isToggleVideo = event.payload == .toggleFirstScreenAvailable
-        let isToggleManual = event.payload == .toggleSecondScreenAvailable
+        let isToggleFirst = event.payload == .toggleFirstScreenAvailable
+        let isToggleSecond = event.payload == .toggleSecondScreenAvailable
         
-        let nextVideo = (isToggleVideo && !currentState.firstScreenAvailable) || (!isToggleVideo && currentState.firstScreenAvailable)
-        let nextManual = (isToggleManual && !currentState.secondScreenAvailable) || (!isToggleManual && currentState.secondScreenAvailable)
+        let nextFirst = currentState.firstScreenAvailable.toggle(isToggleFirst)
+        let nextManual = currentState.secondScreenAvailable.toggle(isToggleSecond)
         
-        return currentState.nextState(firstScreenAvailable: nextManual,
-                                      secondScreenAvailable: nextVideo)
+        return currentState.nextState(firstScreenAvailable: nextFirst,
+                                      secondScreenAvailable: nextManual)
         
     }
 }

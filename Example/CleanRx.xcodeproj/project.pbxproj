@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051ECA782190C21D002A9580 /* Bool+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051ECA772190C21D002A9580 /* Bool+Utils.swift */; };
 		057281382190AD9B00CD0585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057281372190AD9B00CD0585 /* AppDelegate.swift */; };
 		05F4A75E2190AF3C0061C779 /* MyAwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4A75D2190AF3C0061C779 /* MyAwesomeButton.swift */; };
 		05F4A7612190AF440061C779 /* DefaultContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F4A7602190AF430061C779 /* DefaultContainer.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051ECA772190C21D002A9580 /* Bool+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Utils.swift"; sourceTree = "<group>"; };
 		057281362190AD9A00CD0585 /* CleanRx_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CleanRx_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		057281372190AD9B00CD0585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05F4A75D2190AF3C0061C779 /* MyAwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAwesomeButton.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				05F4A7742190AF600061C779 /* UIView+Utils.swift */,
 				05F4A7752190AF600061C779 /* UIViewController+Utils.swift */,
+				051ECA772190C21D002A9580 /* Bool+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				05F4A77B2190AF680061C779 /* UIButton+Rx.swift in Sources */,
 				057281382190AD9B00CD0585 /* AppDelegate.swift in Sources */,
 				05F4A7662190AF490061C779 /* Coordinator.swift in Sources */,
+				051ECA782190C21D002A9580 /* Bool+Utils.swift in Sources */,
 				05F4A7702190AF560061C779 /* MainMenuReducer.swift in Sources */,
 				05F4A7772190AF600061C779 /* UIViewController+Utils.swift in Sources */,
 				05F4A75E2190AF3C0061C779 /* MyAwesomeButton.swift in Sources */,
