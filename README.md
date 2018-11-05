@@ -22,7 +22,7 @@ pod 'CleanRx'
 
 ## Author
 
-RodrigoLGuimaraes, rolongui@yahoo.com.br
+RodrigoLGuimaraes, r.longhi.guimaraes@gmail.com
 
 ## License
 

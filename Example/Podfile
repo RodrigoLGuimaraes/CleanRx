@@ -2,7 +2,14 @@ use_frameworks!
 
 target 'CleanRx_Example' do
   pod 'CleanRx', :path => '../'
-
+  pod 'Swinject', '~> 2.0.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Moya/RxSwift'
+  pod 'Reusable'
+  pod 'SwiftLint'
+  pod 'IQKeyboardManagerSwift'
+  
   target 'CleanRx_Tests' do
     inherit! :search_paths
 

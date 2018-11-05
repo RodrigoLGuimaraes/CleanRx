@@ -1,0 +1,6 @@
+framework module CleanRx {
+  umbrella header "CleanRx-umbrella.h"
+
+  export *
+  module * { export * }
+}
