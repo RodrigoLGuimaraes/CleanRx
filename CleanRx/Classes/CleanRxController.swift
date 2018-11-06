@@ -11,14 +11,14 @@ import RxSwift
 import RxCocoa
 import CleanRx
 
-public protocol RxArchController: class {
+public protocol CleanRxController: class {
     associatedtype State
-    var uiEventChannel: PublishRelay<RxArchEvent> { get set }
+    var uiEventChannel: PublishRelay<CleanRxEvent> { get set }
     func render(_ state: State)
     func handleAction(_ action: UserInterfaceAction)
 }
 
-extension RxArchController {
+extension CleanRxController {
     public func notifyFunctionCalled(callingFunctionName: String = #function) {
         uiEventChannel.accept(
             FunctionCalledEvent(functionName: callingFunctionName)

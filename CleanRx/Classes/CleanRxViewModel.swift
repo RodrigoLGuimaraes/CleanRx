@@ -10,18 +10,18 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public protocol RxArchViewModel {
+public protocol CleanRxViewModel {
     associatedtype State
     
     var stateDriver: Driver<State> { get set }
     var actionDriver: Driver<UserInterfaceAction> { get set }
     var currentState: State { get set }
-    func handle(event: RxArchEvent)
+    func handle(event: CleanRxEvent)
 }
 
-extension RxArchViewModel {
+extension CleanRxViewModel {
     public func initProcessHandling(disposeBag: DisposeBag,
-                             uiEventChannel: PublishRelay<RxArchEvent>? = nil) {
+                             uiEventChannel: PublishRelay<CleanRxEvent>? = nil) {
         if let `uiEventChannel` = uiEventChannel {
             uiEventChannel.subscribe(onNext: { (uiEvent) in
                 self.handle(event: uiEvent)

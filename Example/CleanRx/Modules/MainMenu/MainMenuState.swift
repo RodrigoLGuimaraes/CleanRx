@@ -9,7 +9,7 @@
 import Foundation
 import CleanRx
 
-struct MainMenuState: RxState, Equatable {
+struct MainMenuState: CleanRxState, Equatable {
     let firstScreenAvailable: Bool
     let secondScreenAvailable: Bool
     

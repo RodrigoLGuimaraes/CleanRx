@@ -24,13 +24,13 @@ extension DefaultContainer {
     func registerViews() {
         self.container.register(MainMenuView.self) { resolver in
             return MainMenuView(
-                reducer: resolver.resolve(RxArchReducer.self, name: MainMenuReducer.name)!
+                reducer: resolver.resolve(CleanRxReducer.self, name: MainMenuReducer.name)!
             )
         }
     }
     
     func registerReducers() {
-        self.container.register(RxArchReducer.self, name: MainMenuReducer.name) { (_) in
+        self.container.register(CleanRxReducer.self, name: MainMenuReducer.name) { (_) in
             return MainMenuReducer()
         }
     }

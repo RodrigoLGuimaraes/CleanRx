@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct ViewDidLoadEvent: RxArchEvent {}
-public struct ViewWillLayoutSubviews: RxArchEvent {}
-public struct ViewDidLayoutSubviews: RxArchEvent {}
-public struct ViewWillAppear: RxArchEvent {}
-public struct ViewDidAppearEvent: RxArchEvent {}
-public struct viewLayoutMarginsDidChange: RxArchEvent {}
-public struct viewSafeAreaInsetsDidChange: RxArchEvent {}
-public struct ViewWillDisappear: RxArchEvent {}
-public struct ViewDidDisappear: RxArchEvent {}
+public struct ViewDidLoadEvent: CleanRxEvent {}
+public struct ViewWillLayoutSubviews: CleanRxEvent {}
+public struct ViewDidLayoutSubviews: CleanRxEvent {}
+public struct ViewWillAppear: CleanRxEvent {}
+public struct ViewDidAppearEvent: CleanRxEvent {}
+public struct viewLayoutMarginsDidChange: CleanRxEvent {}
+public struct viewSafeAreaInsetsDidChange: CleanRxEvent {}
+public struct ViewWillDisappear: CleanRxEvent {}
+public struct ViewDidDisappear: CleanRxEvent {}

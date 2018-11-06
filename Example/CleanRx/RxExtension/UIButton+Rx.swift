@@ -12,7 +12,7 @@ import RxCocoa
 import CleanRx
 
 extension ControlEvent {
-    func asEventDriver<T>(_ event: T) -> Driver<RxArchEvent> where T: RxArchEvent {
+    func asEventDriver<T>(_ event: T) -> Driver<CleanRxEvent> where T: CleanRxEvent {
         let voidSignal = self.map { _ in return ()}
         return voidSignal.asDriver(onErrorJustReturn: ()).map {
             _ in return event

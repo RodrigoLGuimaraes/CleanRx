@@ -8,15 +8,15 @@
 
 import Foundation
 
-public struct FunctionCalledEvent: RxArchEvent {
+public struct FunctionCalledEvent: CleanRxEvent {
     public let functionName: String
 }
 
-public struct ButtonClickedEvent<T>: RxArchEvent{
+public struct ButtonClickedEvent<T>: CleanRxEvent{
     public let payload: T
 }
 
-public struct RxArch {
+public struct CleanRx {
     public static func clickEvent<T>(_ payload: T) -> ButtonClickedEvent<T> {
         return ButtonClickedEvent(payload: payload)
     }

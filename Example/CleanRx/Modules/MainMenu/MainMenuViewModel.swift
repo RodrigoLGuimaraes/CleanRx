@@ -11,15 +11,15 @@ import RxSwift
 import RxCocoa
 import CleanRx
 
-class MainMenuViewModel: RxArchViewModel {
+class MainMenuViewModel: CleanRxViewModel {
     
     typealias State = MainMenuState
     
     var stateDriver: Driver<MainMenuState>
     var actionDriver: Driver<UserInterfaceAction>
     
-    private let uiEventChannel: PublishRelay<RxArchEvent>
-    private let reducer: RxArchReducer
+    private let uiEventChannel: PublishRelay<CleanRxEvent>
+    private let reducer: CleanRxReducer
     private let actionEventChannel =  PublishRelay<UserInterfaceAction>()
     private var disposeBag = DisposeBag()
     private var statePubSub = PublishRelay<MainMenuState>()
@@ -30,8 +30,8 @@ class MainMenuViewModel: RxArchViewModel {
         }
     }
     
-    init (reducer: RxArchReducer,
-          uiEventChannel: PublishRelay<RxArchEvent>) {
+    init (reducer: CleanRxReducer,
+          uiEventChannel: PublishRelay<CleanRxEvent>) {
         self.reducer = reducer
         self.uiEventChannel = uiEventChannel
         
@@ -45,12 +45,12 @@ class MainMenuViewModel: RxArchViewModel {
                                  uiEventChannel: uiEventChannel)
     }
     
-    func handle(event: RxArchEvent) {
+    func handle(event: CleanRxEvent) {
         self.currentState = reducer.process(event: event, currentState: self.currentState) as! MainMenuState
         self.handleSideEffect(for: event)
     }
     
-    func handleSideEffect(for event: RxArchEvent) {
+    func handleSideEffect(for event: CleanRxEvent) {
         switch event {
         case let buttonClickedEvent as ButtonClickedEvent<MainMenuView.Button>:
             self.handleButtonClicked(buttonClickedEvent)

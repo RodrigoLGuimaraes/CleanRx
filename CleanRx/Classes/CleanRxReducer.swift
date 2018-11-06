@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol RxArchReducer {
+public protocol CleanRxReducer {
     static var name: String { get }
-    func process<State>(event: RxArchEvent, currentState: State) -> RxState where State: RxState
+    func process<State>(event: CleanRxEvent, currentState: State) -> CleanRxState where State: CleanRxState
 }

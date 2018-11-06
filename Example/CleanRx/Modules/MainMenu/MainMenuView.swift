@@ -17,7 +17,7 @@ protocol MainMenuViewDelegate: class {
     func didCallForCancel()
 }
 
-class MainMenuView: UIViewController, RxArchController {
+class MainMenuView: UIViewController, CleanRxController {
     
     enum Button {
         case firstScreen
@@ -45,10 +45,10 @@ class MainMenuView: UIViewController, RxArchController {
     @IBOutlet weak var toggleSecondScreenButton: UIButton!
     
     var viewModel: MainMenuViewModel!
-    var uiEventChannel = PublishRelay<RxArchEvent>()
-    let reducer: RxArchReducer
+    var uiEventChannel = PublishRelay<CleanRxEvent>()
+    let reducer: CleanRxReducer
     
-    init(reducer: RxArchReducer) {
+    init(reducer: CleanRxReducer) {
         self.reducer = reducer
         super.init(nibName: "MainMenuView", bundle: nil)
     }
@@ -82,11 +82,11 @@ class MainMenuView: UIViewController, RxArchController {
     
     func setupEvents() {
         let events = Driver.merge([
-            firstScreenButton.rx.tap.asEventDriver(RxArch.clickEvent(Button.firstScreen)),
-            secondScreenButton.rx.tap.asEventDriver(RxArch.clickEvent(Button.secondScreen)),
-            cancelButton.rx.tap.asEventDriver(RxArch.clickEvent(Button.navCancel)),
-            toggleFirstScreenButton.rx.tap.asEventDriver(RxArch.clickEvent(Button.toggleFirstScreenAvailable)),
-            toggleSecondScreenButton.rx.tap.asEventDriver(RxArch.clickEvent(Button.toggleSecondScreenAvailable))
+            firstScreenButton.rx.tap.asEventDriver(CleanRx.clickEvent(Button.firstScreen)),
+            secondScreenButton.rx.tap.asEventDriver(CleanRx.clickEvent(Button.secondScreen)),
+            cancelButton.rx.tap.asEventDriver(CleanRx.clickEvent(Button.navCancel)),
+            toggleFirstScreenButton.rx.tap.asEventDriver(CleanRx.clickEvent(Button.toggleFirstScreenAvailable)),
+            toggleSecondScreenButton.rx.tap.asEventDriver(CleanRx.clickEvent(Button.toggleSecondScreenAvailable))
         ])
         
         events.drive(onNext: { (event) in

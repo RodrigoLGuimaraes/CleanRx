@@ -11,22 +11,22 @@ import RxSwift
 import RxCocoa
 import CleanRx
 
-class MainMenuReducer: RxArchReducer {
+class MainMenuReducer: CleanRxReducer {
     
     static var name = "MainMenuReducer"
     
     init() {}
     
-    func process<State>(event: RxArchEvent, currentState: State) -> RxState {
+    func process<State>(event: CleanRxEvent, currentState: State) -> CleanRxState {
         guard let mainMenuState = currentState as? MainMenuState else {
-            return currentState as! RxState
+            return currentState as! CleanRxState
         }
         
         switch event {
         case let buttonClickedEvent as ButtonClickedEvent<MainMenuView.Button>:
-            return self.handleButtonClicked(buttonClickedEvent, currentState: mainMenuState) as! RxState
+            return self.handleButtonClicked(buttonClickedEvent, currentState: mainMenuState) as CleanRxState
         default:
-            return mainMenuState as! RxState
+            return mainMenuState as CleanRxState
         }
     }
     
